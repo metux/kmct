@@ -1,0 +1,117 @@
+---
+import:
+    - linux/rtc
+    - linux/nls
+    - linux/uapi
+    - linux/binfmt
+    - linux/disklabel
+    - linux/debug
+    - linux/networking
+    - linux/netdev
+    - linux/unused
+    - linux/drv
+    - linux/fs
+    - linux/serial
+    - linux/image
+    - linux/blockdev
+    - linux/gpio
+    - linux/leds
+    - linux/of
+
+features:
+    core/64bit:
+        kconf-enable: 64BIT
+
+    core/smp:
+        kconf-enable: SMP
+
+    core/retpoline:
+        kconf-enable: RETPOLINE
+
+    core/cpu-isolation:
+        kconf-enable: CPU_ISOLATION
+
+    core/hpet:
+        kconf-enable: HIGH_RES_TIMERS
+
+    core/swap:
+        kconf-enable: SWAP
+
+    core/tickless:
+        kconf-enable: NO_HZ_IDLE
+
+    core/modules:
+        kconf-enable:
+            - MODULES
+            - MODULE_FORCE_LOAD
+            - MODULE_UNLOAD
+            - MODULE_FORCE_UNLOAD
+
+    core/preempt:
+        kconf-enable: PREEMPT
+
+    core/initrd:
+        kconf-enable:
+            - BLK_DEV_INITRD
+            - RD_GZIP
+            - RD_XZ
+
+    core/multiuser:
+        kconf-enable: MULTIUSER
+
+    core/coredump:
+        kconf-enable: COREDUMP
+
+    core/firmware-loader:
+        kconf-module: FW_LOADER
+
+    core/compaction:
+        kconf-enable: COMPACTION
+
+    core/kallsyms:
+        kconf-enable:
+            - KALLSYMS
+            - KALLSYMS_ALL
+
+    core/standard:
+        feature-enable:
+            - debug/printk
+            - debug/bug
+            - core/coredump
+            - core/multiuser
+            - core/preempt
+            - core/modules
+            - core/tickless
+            - core/kallsyms
+            - uapi/vm-event-counters
+            - uapi/posix-timers
+            - uapi/signalfd
+            - uapi/futex
+            - uapi/epoll
+            - uapi/timerfd
+            - uapi/eventfd
+            - uapi/aio
+            - uapi/fhandle
+            - uapi/advise
+            - uapi/uid16
+            - uapi/shmem
+            - uapi/rseq
+            - image/xz
+            - image/relocatable
+
+        kconf-enable:
+            - CROSS_MEMORY_ATTACH
+            - ELF_CORE
+            - BASE_FULL
+            - KALLSYMS
+            - KALLSYMS_ALL
+            - SLAB_MERGE_DEFAULT
+            - SLAB_FREELIST_RANDOM
+            - SLAB_FREELIST_HARDENED
+            - SLUB_CPU_PARTIAL
+            - SCHED_OMIT_FRAME_POINTER
+            - RANDOMIZE_BASE
+            - RANDOMIZE_MEMORY
+
+kconf-enable:
+    - EXPERT

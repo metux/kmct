@@ -1,0 +1,4 @@
+* add consistency checks whether chosen configs are really enabled
+  (eg. find missing dependencies, undefined/removed options, ...)
+* add more board configs
+* better handling for choice's

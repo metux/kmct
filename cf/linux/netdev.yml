@@ -1,0 +1,17 @@
+---
+features:
+    drv/net/eth:
+        feature-enable: net
+        kconf-enable:
+            - ETHERNET
+            - NETDEVICES
+
+    drv/net/igb:
+        feature-enable: drv/net/eth
+        kconf-enable:
+            - NET_VENDOR_INTEL
+            - IGB
+
+    dev/eth:
+        description: default ethernet devices
+        feature-enable: drv/net/eth

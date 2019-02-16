@@ -1,0 +1,11 @@
+---
+features:
+    # fixme: maybe split into multiple pieces
+    dev/rtc:
+        kconf-enable:
+            - RTC_CLASS
+            - RTC_HCTOSYS
+            - RTC_SYSTOHC
+            - RTC_INTF_SYSFS
+            - RTC_INTF_PROC
+            - RTC_INTF_DEV

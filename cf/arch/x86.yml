@@ -1,0 +1,25 @@
+---
+features:
+    arch/x86/vsyscall:
+        kconf-enable: X86_VSYSCALL_EMULATION
+
+    arch/x86/pat:
+        kconf-enable: X86_PAT
+
+    arch/x86/mtrr:
+        kconf-enable:
+            - MTRR
+            - MTRR_SANITIZER
+
+    arch/x86/64bit:
+        kconf-enable: 64BIT
+
+    arch/x86/rtc:
+        feature-enable: dev/rtc
+        kconf-enable: RTC_DRV_CMOS
+
+rules:
+    - on-feature:
+        - dev/rtc
+      feature-enable:
+        - arch/x86/rtc

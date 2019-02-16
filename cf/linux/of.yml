@@ -1,0 +1,15 @@
+features:
+    core/of:
+        kconf-enable: OF
+
+    core/of/flattree:
+        feature-enable: core/of
+        kconf-enable: OF_FLATTREE
+
+    core/of/overlay:
+        feature-enable: core/of
+        kconf-enable: OF_OVERLAY
+
+    core/of/unittest:
+        feature-enable: core/of
+        kconf-enable: OF_UNITTEST

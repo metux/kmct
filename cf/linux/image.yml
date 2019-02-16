@@ -1,0 +1,7 @@
+---
+features:
+    image/xz:
+        kconf-enable: KERNEL_XZ
+
+    image/relocatable:
+        kconf-enable: RELOCATABLE

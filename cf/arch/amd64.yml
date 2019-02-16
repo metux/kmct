@@ -1,0 +1,42 @@
+---
+import:
+    - arch/x86
+
+features:
+    arch/amd64/uapi32:
+        kconf-enable:
+            - IA32_EMULATION
+            - X86_X32
+
+    arch/amd64:
+        feature-enable:
+            - arch/x86/pat
+            - arch/x86/mtrr
+            - arch/x86/64bit
+            - core/hpet
+            - core/tickless
+            - core/retpoline
+            - core/smp
+
+        kconf-enable:
+            - X86_MCE
+            - X86_MCE_AMD
+
+            # maybe not needed
+            - X86_AMD_PLATFORM_DEVICE
+
+            - GENERIC_CPU
+            # do we need to export DMI data to userland ?
+            - DMI
+
+            - X86_REROUTE_FOR_BROKEN_BOOT_IRQS
+
+            # try to disable
+            - ARCH_RANDOM
+
+rules:
+    - on-feature:
+        - core/64bit
+        - uapi/32bit
+      feature-enable:
+        - arch/amd64/uapi32

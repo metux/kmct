@@ -1,0 +1,8 @@
+---
+features:
+    dev/leds/trigger:
+        kconf-enable: LEDS_TRIGGERS
+
+    dev/leds/trigger/panic:
+        feature-enable: dev/leds/trigger
+        kconf-enable: LEDS_TRIGGER_PANIC

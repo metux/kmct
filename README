@@ -1,0 +1,28 @@
+kernel meta config tool
+-----------------------
+
+This tool automatically creates kernel .config's from a high level
+meta-configuration.
+
+When dealing with lots of embedded applications on lots of different
+boards, creating an optimal kernel config can be time-consuming task.
+
+Let's say you just wann enable the ethernet port, you'll have to find
+out which NIC, PHY, etc, are needed. Further imagine, you're porting
+to another board, you'll have to do the same again and also find out
+which settings you can disable again.
+
+KMCT allows specifying your configuration on a much higher level:
+Just activate the corresponding board and the required features,
+and kmct will generate the .config for you.
+
+
+NOTE: it's still in a very early stage. only one board config (apuv2)
+so far. And several planned features (eg. consistency checks) yet
+missing.
+
+Of course, patches are welcomed :)
+
+
+Author/Maintainer:
+Enrico Weigelt, metux IT consult <info@metux.net>

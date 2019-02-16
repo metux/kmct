@@ -1,0 +1,53 @@
+---
+import:
+    - board/apuv2
+    - platform/debian
+
+feature-enable:
+    - core/64bit
+    - uapi/32bit
+    - uapi/evdev
+#    - uapi/sgetmask-syscall
+    - nls/cp437
+    - nls/cp737
+    - nls/cp850
+    - nls/cp852
+    - nls/ascii
+    - nls/iso8859-1
+    - nls/utf8
+    - fs/ext4
+    - fs/xattr
+    - debian-kernel
+    - dev/gpio/sysfs
+
+    # board devices - defined in board file
+    - board/apuv2
+    - board/apuv2/front-panel
+    - dev/rtc
+    - dev/eth
+    - dev/serial
+    - dev/sata
+    - dev/leds/trigger
+    - dev/leds/trigger/panic
+
+    # oftree
+    - core/of
+    - core/of/flattree
+    - core/of/overlay
+    - core/of/unittest
+
+kconf-enable:
+    - PROC_CHILDREN
+    - HARDENED_USERCOPY
+    - FORTIFY_SOURCE
+    # needed for initrd ? --> then put it to debian
+    - XZ_DEC_X86
+
+    # missing
+    - LEGACY_VSYSCALL_NONE
+    - JUMP_LABEL
+    - STRIP_ASM_SYMS
+    - VMAP_STACK
+    - REFCOUNT_FULL
+    - CORE_DUMP_DEFAULT_ELF_HEADERS
+    - BOOT_PRINTK_DELAY

@@ -1,0 +1,61 @@
+---
+features:
+    uapi/sysvipc:
+        kconf-enable: SYSVIPC
+
+    uapi/posix-mqueue:
+        kconf-enable: POSIX_MQUEUE
+
+    uapi/vm-event-counters:
+        kconf-enable: VM_EVENT_COUNTERS
+
+    uapi/posix-timers:
+        kconf-enable: POSIX_TIMERS
+
+    uapi/signalfd:
+        kconf-enable: SIGNALFD
+
+    uapi/evdev:
+        kconf-module: INPUT_EVDEV
+
+    uapi/futex:
+        kconf-enable: FUTEX
+
+    uapi/epoll:
+        kconf-enable: EPOLL
+
+    uapi/timerfd:
+        kconf-enable: TIMERFD
+
+    uapi/eventfd:
+        kconf-enable: EVENTFD
+
+    uapi/aio:
+        kconf-enable: AIO
+
+    uapi/fhandle:
+        kconf-enable: FHANDLE
+
+    uapi/advise:
+        kconf-enable: ADVISE_SYSCALLS
+
+    uapi/shmem:
+        kconf-enable: SHMEM
+
+    uapi/rseq:
+        kconf-enable: RSEQ
+
+    uapi/uid16:
+        kconf-enable: UID16
+
+    uapi/sysfs-syscall:
+        kconf-enable: SYSFS_SYSCALL
+
+    uapi/uselib:
+        kconf-enable: USELIB
+
+    uapi/32bit:
+        description: support 32bit userland on 64bit kernels
+
+    uapi/sgetmask-syscall:
+        kconf-enable: SGETMASK_SYSCALL

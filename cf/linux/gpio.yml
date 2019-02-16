@@ -1,0 +1,4 @@
+---
+features:
+    dev/gpio/sysfs:
+        kconf-enable: GPIO_SYSFS

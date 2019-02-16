@@ -1,0 +1,28 @@
+---
+features:
+    net:
+        kconf-enable:
+            - NET
+
+    net/unix:
+        feature-enable: net
+        kconf-module: UNIX
+
+    net/packet:
+        feature-enable: net
+        kconf-module:
+            - PACKET
+            - PACKET_DIAG
+
+    net/inet:
+        feature-enable: net
+        kconf-enable:
+            - INET
+
+    net/inet/multicast:
+        feature-enable: net/inet
+        kconf-enable: IP_MULTICAST
+
+    net/inet/advanced-router:
+        feature-enable: net/inet
+        kconf-enable: IP_ADVANCED_ROUTER

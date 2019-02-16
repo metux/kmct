@@ -1,0 +1,22 @@
+---
+features:
+    drv/leds-gpio:
+        kconf-enable:
+            - NEW_LEDS
+            - LEDS_GPIO
+            - LEDS_CLASS
+
+    drv/acpi:
+        kconf-enable:
+            - ACPI
+            - ACPI_SPCR_TABLE
+            - ACPI_REV_OVERRIDE_POSSIBLE
+            - ACPI_TABLE_UPGRADE
+            - ACPI_PCI_SLOT
+
+    drv/pci/base:
+        kconf-enable:
+            - PCI
+            - PCIEPORTBUS
+            - PCIEAER
+            - PCI_MSI

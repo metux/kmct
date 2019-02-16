@@ -1,0 +1,22 @@
+---
+features:
+    dev/block:
+        kconf-enable: BLOCK
+
+    dev/block/scsi:
+        feature-enable: dev/block
+        kconf-enable:
+            - BLK_DEV_BSG
+            - BLK_DEV_SD
+
+    dev/sata:
+        feature-enable: dev/block/scsi
+        kconf-enable: ATA
+
+    dev/sata/ahci:
+        feature-enable: dev/sata
+        kconf-enable: SATA_AHCI
+
+    dev/sata/acpi:
+        feature-enable: dev/sata/ahci
+        kconf-enable: ATA_ACPI

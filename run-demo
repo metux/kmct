@@ -1,0 +1,8 @@
+#!/bin/bash
+
+KSRC=/home/nekrad/src/batlink/workspace/pkg/kernel.apu3.git/
+MYCONF=`pwd`/tmp/config.kmct
+
+./kmct-genconf --confdir cf --target apu-demo --output $MYCONF --kerneltree $KSRC || exit 1
+
+diff -ruN $KSRC/.config $MYCONF

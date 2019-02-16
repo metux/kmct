@@ -1,0 +1,22 @@
+---
+features:
+    nls/cp437:
+        kconf-module: NLS_CODEPAGE_437
+
+    nls/cp737:
+        kconf-module: NLS_CODEPAGE_737
+
+    nls/cp850:
+        kconf-module: NLS_CODEPAGE_850
+
+    nls/cp852:
+        kconf-module: NLS_CODEPAGE_852
+
+    nls/iso8859-1:
+        kconf-module: NLS_ISO8859_1
+
+    nls/ascii:
+        kconf-module: NLS_ASCII
+
+    nls/utf8:
+        kconf-module: NLS_UTF8

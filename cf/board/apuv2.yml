@@ -1,0 +1,60 @@
+---
+import:
+    - linux/all
+    - arch/amd64
+
+features:
+    board/apuv2/front-panel:
+        feature-enable: drv/leds-gpio
+
+        kconf-module:
+            - KEYBOARD_GPIO_POLLED
+            - GPIO_AMD_FCH
+
+        kconf-enable:
+            # currently buggy when built as module
+            - PCENGINES_APU2
+            - INPUT_KEYBOARD
+            - GPIOLIB
+
+    # FIXME
+    board/apuv2/pci:
+        kconf-enable:
+            - PCI
+            - PCIEPORTBUS
+            - PCI_MSI
+            - PCIEAER
+
+    board/apuv2:
+        feature-enable:
+            - arch/amd64
+            - drv/acpi
+
+        kconf-enable:
+            - CC_OPTIMIZE_FOR_PERFORMANCE
+
+        kconf-setting:
+            LOCALVERSION:     '-apu2mini-16'
+            NR_CPUS:          4
+            PANIC_TIMEOUT:    3
+
+rules:
+    - on-feature:
+        - board/apuv2
+        - dev/sata
+      feature-enable:
+        - dev/sata/ahci
+        - dev/sata/acpi
+        - dev/block/scsi
+        - drv/pci/base
+    - on-feature:
+        - board/apuv2
+        - dev/serial
+      feature-enable:
+        - dev/serial/8250
+    - on-feature:
+        - board/apuv2
+        - dev/eth
+      feature-enable:
+        - drv/net/igb
+        - net

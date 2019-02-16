@@ -1,0 +1,48 @@
+---
+features:
+    fs/xattr:
+        kconf-enable:
+
+    fs/ext4:
+        feature-enable: dev/block
+        kconf-enable:
+            - EXT4_FS
+            - EXT4_USE_FOR_EXT2
+
+    fs/ext4/security-labels:
+        kconf-enable: EXT4_FS_SECURITY
+
+    fs/ext4/posix-acl:
+        kconf-enable: EXT4_FS_POSIX_ACL
+
+    fs/devtmpfs:
+        kconf-enable: DEVTMPFS
+
+    fs/tmpfs:
+        kconf-enable: TMPFS
+
+    fs/tmpfs/posix-acl:
+        kconf-enable: TMPFS_POSIX_ACL
+
+    fs/posix-acl:
+        description: enable POSIX access control lists on all enabled filesystems
+
+rules:
+    # enable security xattrs
+    - on-feature:
+        - fs/ext4
+        - fs/xattr
+      feature-enable:
+        - fs/ext4/security-labels
+
+    # enable ACLs
+    - on-feature:
+        - fs/posix-acl
+        - fs/ext4
+      feature-enable:
+        - fs/ext4/posix-acl
+    - on-feature:
+        - fs/posix-acl
+        - fs/tmpfs
+      feature-enable:
+        - fs/tmpfs/posix-acl

@@ -1,0 +1,7 @@
+---
+features:
+    binfmt/elf:
+        kconf-enable: BINFMT_ELF
+
+    binfmt/script:
+        kconf-enable: BINFMT_SCRIPT

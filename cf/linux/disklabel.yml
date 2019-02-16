@@ -1,0 +1,11 @@
+---
+features:
+    disklabel/msdos:
+        kconf-enable:
+            - PARTITION_ADVANCED
+            - MSDOS_PARTITION
+
+    disklabel/efi:
+        kconf-enable:
+            - PARTITION_ADVANCED
+            - EFI_PARTITION

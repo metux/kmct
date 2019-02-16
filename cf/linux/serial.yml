@@ -1,0 +1,16 @@
+---
+features:
+    dev/serial:
+        kconf-enable:
+            - SERIAL_EARLYCON
+            - SERIAL_CORE
+
+    dev/serial/8250:
+        feature-enable: dev/serial
+        kconf-enable:
+            - SERIAL_8250
+            - SERIAL_8250_FINTEK
+            - SERIAL_8250_CONSOLE
+            - SERIAL_8250_EXTENDED
+            - SERIAL_8250_MANY_PORTS
+            - SERIAL_8250_SHARE_IRQ

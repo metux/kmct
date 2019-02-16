@@ -1,0 +1,47 @@
+#!/usr/bin/python
+
+from metux import kmct
+from metux.kmct import log
+from sys import stderr, stdout, exit, argv
+from argparse import ArgumentParser
+from os.path import abspath
+from subprocess import call
+
+parser = ArgumentParser(description='kernel meta config tool')
+parser.add_argument('--target',     help='specify target')
+parser.add_argument('--confdir',    help='configuration directory')
+parser.add_argument('--output',     help='output kconfig file')
+parser.add_argument('--kerneltree', help='kernel source directory')
+
+args = parser.parse_args()
+
+if args.confdir is None:
+    stderr.write("%s: missing --confdir parameter\n" % argv[0])
+    exit(1)
+
+if args.target is None:
+    stderr.write("%s: missing --target parameter\n" % argv[0])
+    exit(1)
+
+target = kmct.getTarget(args.confdir, args.target);
+kconf_text = target.render_cf()
+
+if args.output is None:
+    stdout.write(kconf_text)
+else:
+    args.output = abspath(args.output)
+    log.info("writing config: %s" % args.output)
+    kmct.util.write_file(args.output, kconf_text)
+
+if args.kerneltree is None:
+    log.info("no kernel tree provided. can't update kernel config")
+else:
+    if args.output is None:
+        log.info("can't run kernel config when writing to stdout. use --output parameter")
+    else:
+        log.info("kernel config call not implemented yet")
+        exit(call(
+            'make olddefconfig KCONFIG_CONFIG="%s"' % args.output,
+            cwd=abspath(args.kerneltree),
+            shell=True
+        ))

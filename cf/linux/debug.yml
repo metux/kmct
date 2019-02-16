@@ -1,0 +1,17 @@
+---
+features:
+    debug/printk:
+        kconf-enable:
+            - PRINTK
+            - PRINTK_TIME
+
+    debug/bug:
+        kconf-enable: BUG
+
+    debug/debugfs:
+        kconf-enable: DEBUG_FS
+
+    debug/kallsyms:
+        kconf-enable:
+            - KALLSYMS
+            - KALLSYMS_ALL
