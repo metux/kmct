@@ -64,3 +64,8 @@ rules:
       feature-enable:
         - drv/usb/xhci-pci
         - drv/usb/ehci-pci
+    - on-feature:
+        - board/apuv2
+        - dev/hwmon
+      feature-enable:
+        - drv/hwmon/i5k-amb

@@ -1,24 +1,30 @@
 ---
 features:
     drv/usb/xhci-pci:
-        feature-enable: drv/usb/pci
+        feature-enable:
+            - drv/usb/pci
         kconf-module:
             - USB_XHCI_HCD
             - USB_XHCI_PCI
 
     drv/usb/ehci-pci:
-        feature-enable: drv/usb/pci
+        feature-enable:
+            - drv/usb/pci
         kconf-module:
             - USB_EHCI_HCD
             - USB_EHCI_PCI
 
-    drv/usb/pci:
-        kconf-enable:
-            - USB
-            - USB_SUPPORT
-            - USB_PCI
+    drv/usb/host-support:
         kconf-module:
-            - USB_COMMON
+            - USB
+        kconf-enable:
+            - USB_SUPPORT
+
+    drv/usb/pci:
+        feature-enable:
+            - drv/usb/host-support
+        kconf-enable:
+            - USB_PCI
 
     dev/usb:
         description: default USB adapters

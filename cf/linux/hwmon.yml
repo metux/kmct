@@ -1,0 +1,13 @@
+---
+features:
+    drv/hwmon/core:
+        kconf-module:
+            - HWMON
+
+    drv/hwmon/i5k-amb:
+        feature-enable: drv/hwmon/core
+        kconf-module:
+            - SENSORS_I5K_AMB
+
+    dev/hwmon:
+        description: hardware monitoring support

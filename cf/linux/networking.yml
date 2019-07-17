@@ -34,3 +34,8 @@ features:
             - PPP_BSDCOMP
             - PPP_DEFLATE
             - PPP_MPPE
+
+    net/tun:
+        feature-enable: net
+        kconf-module:
+            - TUN

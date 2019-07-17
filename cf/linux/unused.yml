@@ -87,12 +87,12 @@ features:
             - WLAN_VENDOR_MEDIATEK
             - WLAN_VENDOR_RALINK
             - WLAN_VENDOR_REALTEK
-            - RTL_CARDS
             - WLAN_VENDOR_RSI
             - WLAN_VENDOR_ST
             - WLAN_VENDOR_TI
             - WLAN_VENDOR_ZYDAS
             - WLAN_VENDOR_QUANTENNA
+            - RTL_CARDS
 
     unused/acpi:
         kconf-enable:
@@ -130,7 +130,6 @@ features:
             - BUG_ON_DATA_CORRUPTION
             - IO_STRICT_DEVMEM
             - OPTIMIZE_INLINING
-            - WIRELESS
             - UEVENT_HELPER
             - FW_LOADER_USER_HELPER
             - PNP_DEBUG_MESSAGES
@@ -403,7 +402,6 @@ features:
             - SCHED_STACK_END_CHECK
             - PCIEASPM
             - PCI_QUIRKS
-            - WLAN
             - INPUT_POLLDEV
             - KEYBOARD_ATKBD
             - INPUT_MOUSE

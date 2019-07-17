@@ -8,7 +8,7 @@ features:
 
     drv/net/wlan:
         feature-enable: drv/net/eth
-        kconf-module:
+        kconf-enable:
             - WLAN
             - WIRELESS
 

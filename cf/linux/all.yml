@@ -18,6 +18,7 @@ import:
     - linux/leds
     - linux/of
     - linux/usb
+    - linux/hwmon
 
 features:
     core/64bit:
