@@ -20,6 +20,7 @@ feature-enable:
     - fs/btrfs
     - debian-kernel
     - dev/gpio/sysfs
+    - net/ppp
 
     # board devices - defined in board file
     - board/apuv2
@@ -31,6 +32,9 @@ feature-enable:
     - dev/leds/trigger
     - dev/leds/trigger/panic
     - dev/usb
+
+    # extra devices (mpcie)
+    - drv/net/wlan/ath9k
 
     # oftree
     - core/of

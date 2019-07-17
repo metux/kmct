@@ -34,7 +34,7 @@ features:
             - CC_OPTIMIZE_FOR_PERFORMANCE
 
         kconf-setting:
-            LOCALVERSION:     '-apu2mini-16'
+            LOCALVERSION:     '-apu2mini-20'
             NR_CPUS:          4
             PANIC_TIMEOUT:    3
 
@@ -59,8 +59,8 @@ rules:
         - drv/net/igb
         - net
     - on-feature:
-        - board/apu2
+        - board/apuv2
         - dev/usb
       feature-enable:
-        - dev/usb/xhci-pci
-        - dev/usb/ehci-pci
+        - drv/usb/xhci-pci
+        - drv/usb/ehci-pci

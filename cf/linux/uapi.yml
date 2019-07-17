@@ -59,3 +59,7 @@ features:
 
     uapi/sgetmask-syscall:
         kconf-enable: SGETMASK_SYSCALL
+
+    uapi/dmi-id:
+        description: export DMI board IDs to userland
+        kconf-enable: DMIID

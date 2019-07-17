@@ -26,3 +26,11 @@ features:
     net/inet/advanced-router:
         feature-enable: net/inet
         kconf-enable: IP_ADVANCED_ROUTER
+
+    net/ppp:
+        feature-enable: net
+        kconf-module:
+            - PPP
+            - PPP_BSDCOMP
+            - PPP_DEFLATE
+            - PPP_MPPE

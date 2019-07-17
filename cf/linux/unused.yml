@@ -1,5 +1,19 @@
 ---
+
+# This file just lists those options that kconfig shouldn't
+# turn on automatically, if not defined. the grouping here
+# doesn't matter - the symbols just need to be defined somewhere
+#
+# kmct will generate an '# <sym> is not defined' line, unless
+# the symbol is enabled somewhere else, so kconfig doesn't treat
+# them as new and automatically use its defaults for them
+#
+# Note: when one some symbol is added to some real feature, it should
+# be removed from here - this file is just for those which aren't
+# defined anywhere
+
 features:
+    # just the submenus for network device vendors
     unused/net-vendor:
         kconf-enable:
             - NET_VENDOR_3COM
@@ -62,6 +76,23 @@ features:
             - NET_VENDOR_TI
             - NET_VENDOR_VIA
             - NET_VENDOR_WIZNET
+            - NET_VENDOR_XILINX
+            - WLAN_VENDOR_ADMTEK
+            - WLAN_VENDOR_ATMEL
+            - WLAN_VENDOR_BROADCOM
+            - WLAN_VENDOR_CISCO
+            - WLAN_VENDOR_INTEL
+            - WLAN_VENDOR_INTERSIL
+            - WLAN_VENDOR_MARVELL
+            - WLAN_VENDOR_MEDIATEK
+            - WLAN_VENDOR_RALINK
+            - WLAN_VENDOR_REALTEK
+            - RTL_CARDS
+            - WLAN_VENDOR_RSI
+            - WLAN_VENDOR_ST
+            - WLAN_VENDOR_TI
+            - WLAN_VENDOR_ZYDAS
+            - WLAN_VENDOR_QUANTENNA
 
     unused/acpi:
         kconf-enable:
@@ -90,6 +121,7 @@ features:
 
     unused/dummy1:
         kconf-enable:
+            - LCD_CLASS_DEVICE
             - X86_DEBUG_FPU
             - X86_VERBOSE_BOOTUP
             - RUNTIME_TESTING_MENU
@@ -293,7 +325,6 @@ features:
             - X86_SYSFB
             - EDD
             - FIRMWARE_MEMMAP
-            - DMIID
             - DMI_SYSFS
             - ISCSI_IBFT_FIND
             - FW_CFG_SYSFS
@@ -541,7 +572,6 @@ features:
             - X86_SYSFB
             - EDD
             - FIRMWARE_MEMMAP
-            - DMIID
             - DMI_SYSFS
             - ISCSI_IBFT_FIND
             - FW_CFG_SYSFS
@@ -619,3 +649,6 @@ features:
             - SCHEDSTATS
             - SCHED_STACK_END_CHECK
             - PCIEASPM
+            - BACKLIGHT_CLASS_DEVICE
+            - USB_NET_DRIVERS
+            - USB_HID

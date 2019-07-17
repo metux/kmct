@@ -6,11 +6,30 @@ features:
             - ETHERNET
             - NETDEVICES
 
+    drv/net/wlan:
+        feature-enable: drv/net/eth
+        kconf-module:
+            - WLAN
+            - WIRELESS
+
+    drv/net/wlan/ath9k:
+        feature-enable: drv/net/wlan
+        kconf-enable:
+            - WLAN_VENDOR_ATH
+        kconf-module:
+            - MAC80211
+            - CFG80211
+            - ATH9K
+
     drv/net/igb:
         feature-enable: drv/net/eth
         kconf-enable:
             - NET_VENDOR_INTEL
             - IGB
+
+    dev/wlan:
+        description: default WLAN devics
+        features-enable: drv/net/wlan
 
     dev/eth:
         description: default ethernet devices

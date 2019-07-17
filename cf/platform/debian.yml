@@ -22,6 +22,7 @@ features:
             - core/preempt
             - uapi/sysvipc
             - uapi/posix-mqueue
+            - uapi/dmi-id
             - disklabel/msdos
             - disklabel/efi
             - fs/devtmpfs
