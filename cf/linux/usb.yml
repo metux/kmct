@@ -1,0 +1,20 @@
+---
+features:
+    drv/usb/xhci-pci:
+        kconf-enable:
+            - USB
+            - USB_PCI
+            - USB_XHCI_HCD
+            - USB_XHCI_PCI
+
+    drv/usb/ehci-pci:
+        kconf-enable:
+            - USB
+            - USB_PCI
+            - USB_EHCI_HCD
+            - USB_EHCI_PCI
+
+    dev/usb:
+        description: default USB adapters
+        kconf-enable:
+            - USB

@@ -17,6 +17,7 @@ feature-enable:
     - nls/utf8
     - fs/ext4
     - fs/xattr
+    - fs/btrfs
     - debian-kernel
     - dev/gpio/sysfs
 
@@ -29,6 +30,7 @@ feature-enable:
     - dev/sata
     - dev/leds/trigger
     - dev/leds/trigger/panic
+    - dev/usb
 
     # oftree
     - core/of

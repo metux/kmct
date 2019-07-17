@@ -9,6 +9,10 @@ features:
             - EXT4_FS
             - EXT4_USE_FOR_EXT2
 
+    fs/btrfs:
+        kconf-enable:
+            - BTRFS_FS
+
     fs/ext4/security-labels:
         kconf-enable: EXT4_FS_SECURITY
 

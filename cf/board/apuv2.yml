@@ -58,3 +58,9 @@ rules:
       feature-enable:
         - drv/net/igb
         - net
+    - on-feature:
+        - board/apu2
+        - dev/usb
+      feature-enable:
+        - dev/usb/xhci-pci
+        - dev/usb/ehci-pci

@@ -17,6 +17,7 @@ import:
     - linux/gpio
     - linux/leds
     - linux/of
+    - linux/usb
 
 features:
     core/64bit:
