@@ -26,5 +26,28 @@ features:
         kconf-enable:
             - USB_PCI
 
+    drv/usb/serial:
+        feature-enable:
+            - dev/usb/host
+        kconf-module:
+            - USB_SERIAL
+
+    drv/usb/serial/option:
+        feature-enable:
+            - drv/usb/serial
+        kconf-module:
+            - USB_SERIAL_OPTION
+
+    drv/usb/storage:
+        feature-enable:
+            - dev/usb/host
+        kconf-module:
+            - USB_STORAGE
+
+    dev/usb/host:
+        description: default USB adapters
+        feature-enable:
+            - dev/usb
+
     dev/usb:
         description: default USB adapters

@@ -37,6 +37,9 @@ feature-enable:
 
     # extra devices (mpcie)
     - drv/net/wlan/ath9k
+    - drv/usb/storage
+    # huawei baseband
+    - drv/usb/serial/option
 
     # oftree
     - core/of
@@ -62,29 +65,13 @@ kconf-enable:
 
     # FIXME
     - LEDS_APU
-    - LEDS_TRIGGER_DISK
     - LEDS_BRIGHTNESS_HW_CHANGED
 
 ## FIXME !!!
 kconf-module:
     - USB_ACM
     - USB_WDM
-    - USB_STORAGE
-    - USB_SERIAL
     - USB_SERIAL_WWAN
-    - USB_SERIAL_OPTION
     - LEDS_CLASS_FLASH
-    - LEDS_TRIGGER_TIMER
-    - LEDS_TRIGGER_ONESHOT
-    - LEDS_TRIGGER_HEARTBEAT
-    - LEDS_TRIGGER_GPIO
-    - LEDS_TRIGGER_TRANSIENT
-    - LEDS_TRIGGER_NETDEV
-    - LEDS_TRIGGER_PATTERN
-    - LEDS_TRIGGER_DEFAULT_ON
-    - MDIO
     - MDIO_DEVICE
     - MDIO_BUS
-    - PHYLIB
-#    - SENSORS_I5K_AMB
-#    - HWMON
